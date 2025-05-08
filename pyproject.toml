@@ -1,0 +1,25 @@
+[project]
+name = "uv-mod-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "psycopg-binary>=3.2.7",
+]
+
+[build-system]
+requires = [
+    # The minimum setuptools version is specific to the PEP 517 backend,
+    # and may be stricter than the version required in `setup.py`
+    "setuptools>=40.6.0",
+    "wheel",
+    "cython",
+]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["uv*"]  # alternatively: `exclude = ["additional*"]`
+namespaces = false
